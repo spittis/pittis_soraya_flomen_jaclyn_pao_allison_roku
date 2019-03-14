@@ -4,7 +4,7 @@
 if(isset($_GET['id'])){
 
     $tbl = 'tbl_movies';
-    $col = 'movies_id';
+    $col = 'movie_id';
     $value = $_GET['id'];
     $results = getSingle($tbl, $col, $value);
 
@@ -32,7 +32,7 @@ if(isset($_GET['id'])){
             //using endwhile keeps php code cleaner 
             while($row = $results->fetch(PDO::FETCH_ASSOC)):?>
             <?php //TODO::  use the following syntax to display at least 3 more columns from the database?>
-                <li><?php echo $row['movies_title'];?></li>
+                <li><?php echo $row['movie_title'];?></li>
             <?php endwhile;?>
     </section>
     <?php include('templates/footer.php'); ?>

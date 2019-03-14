@@ -61,7 +61,7 @@ export default {
                             <a href="family" @click.prevent="loadMedia('family', null)">Family</a>
                         </li>
                         <li>
-                            <a href="horror" @click.prevent="loadMedia('fantasy', null)">Fantasy</a>
+                            <a href="horror" @click.prevent="loadMedia('horror', null)">Fantasy</a>
                         </li>
                         <li>
                             <a href="horror" @click.prevent="loadMedia(null, null)">All</a>
@@ -86,9 +86,30 @@ export default {
                             <a href="horror" @click.prevent="loadMedia(null, 'audio')">All</a>
                         </li>
                     </ul>
+
+                    <!-- genres for tv -->
+                    <ul v-if="activeMediaType == 'television'" class="media-genres">
+                    <li>
+                        <a href="action" @click.prevent="loadMedia('action', 'television')">Action</a>
+                    </li>
+                    <li>
+                        <a href="comedy" @click.prevent="loadMedia('comedy', 'television')">Comedy</a>
+                    </li>
+                    <li>
+                        <a href="family" @click.prevent="loadMedia('family', 'television')">Family</a>
+                    </li>
+                    <li>
+                        <a href="horror" @click.prevent="loadMedia('horror', 'television')">Fantasy</a>
+                    </li>
+                    <li>
+                        <a href="horror" @click.prevent="loadMedia(null, 'television')">All</a>
+                    </li>
+                </ul>
+
                 <div class="thumb-wrapper clearfix">
-                    <img v-if="activeMediaType == 'video'" v-for="media in retrievedMedia" :src="'images/video/' + media.movies_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb">
-                    <img v-if="activeMediaType == 'audio'" v-for="media in retrievedMedia" :src="'images/audio/' + media.audio_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb audio-thumb">
+                    <img v-if="activeMediaType == 'video'" v-for="media in retrievedMedia" :src="'images/' + media.movies_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb">
+                    <img v-if="activeMediaType == 'audio'" v-for="media in retrievedMedia" :src="'images/' + media.audio_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb audio-thumb">
+                    <img v-if="activeMediaType == 'television'" v-for="media in retrievedMedia" :src="'images/' + media.television_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb audio-thumb">
                 </div>
             </div>       
         </div> <!-- end 2-up for media info -->

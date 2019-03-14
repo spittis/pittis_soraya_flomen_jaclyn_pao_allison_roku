@@ -7,8 +7,16 @@
 
         if ($type == "video") {
             $tbl = "tbl_movies";
-        } else {
+            $col = 'movie_id';
+            $tbl3 = 'tbl_movies_genre';
+        } else if ($type == "audio"){
             $tbl = "tbl_audio";
+            $col = 'audio_id';
+            $tbl3 = 'tbl_audio_genre';
+        }else{
+            $tbl = "tbl_tv";
+            $col = 'tv_id';
+            $tbl3 = 'tbl_tv_genre';
         }
     }
 
@@ -16,8 +24,6 @@
 
         //$tbl = 'tbl_movies';
         $tbl2 = 'tbl_genre';
-        $tbl3 = 'tbl_mov_genre';
-        $col = 'movies_id';
         $col2 = 'genre_id';
         $col3 = 'genre_name';
         $filter = $_GET['filter'];
