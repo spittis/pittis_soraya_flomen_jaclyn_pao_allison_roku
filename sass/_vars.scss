@@ -1,0 +1,36 @@
+$dark-bg: rgb(26, 24, 24);
+$roku-purple: #6C3C97;
+
+@mixin vertical-align($position: relative) {
+    position: $position;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+  
+
+
+//SORAYA
+
+$body: #fefefe;
+$blue: #00EEFF;
+$pink: #D742D8;
+$header: 'inception', sans-serif;
+$main-font: "Avenir Next", Helvetica, sans-serif;
+$cursive: 'classybeautiful';
+
+
+@font-face {
+    font-family: 'inception';
+    src: url('../fonts/inception.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'classybeautiful';
+    src: url('../fonts/classybeautiful.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
