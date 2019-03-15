@@ -21,8 +21,8 @@ export default {
                 </form>
 
                         <div id="login-buttons" class="col-auto my-1">
-                            <button v-on:click.prevent="login()" type="submit"><a>SIGN IN</a></button>
-                            <a href="admin/admin_createuser.php">Sign Up</a>
+                            <input v-on:click.prevent="login()" type="submit">
+                            <a href="signup.html">Sign Up</a>
                         </div>
     </div>
 

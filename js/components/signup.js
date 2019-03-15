@@ -1,4 +1,3 @@
-
 // this page gets the cards from usercomponent and fills in the name and messages
 export default {
 	template: `
