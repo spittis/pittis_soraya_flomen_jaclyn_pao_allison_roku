@@ -1,22 +1,28 @@
 <?php 
 
-    function getAll($tbl){
 
-        include('connect.php');
+function getAll($tbl){
 
-        $queryAll = 'SELECT * FROM '.$tbl;
-        $runAll = $pdo->query($queryAll);
+    include('connect.php');
 
-        $result = array();       
+    $queryAll = 'SELECT * FROM '.$tbl;
+    $runAll = $pdo->query($queryAll);
 
-        while($row = $runAll->fetch(PDO::FETCH_ASSOC)) {
-            $result[] = $row;
-        }
+    if($runAll){
+        $results = array();
+   
+    while($row = $runAll->fetch(PDO::FETCH_ASSOC)) {
+        $result[] = $row;
+    }
 
-        return $result;
+    return $result;
 
-        }
-    
+    }
+    else{
+        $error = 'Ope, something went wrong!';
+        return $error;
+    }
+}
 
     function getSingle($tbl, $col, $value){
 
