@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Vue.js Single-File JavaScript Component Demo</title>
+  <title>Roku Flashback</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="css/master.css">
@@ -20,15 +20,34 @@
 		<!-- <div class="row">
 			<header class="col-sm-12 fixed-top">
 				<img src="images/roku.svg" alt="Roku logo" width="90"><span>FlashBack</span>
-				<nav class="float-right">
-				<ul>-->
-					<!-- <li>Kids</li> -->            
-					<li v-if="authenticated"><i class="fas fa-user-circle"></i></li>
-					<li v-if="administrator"><i class="fas fa-cog"></i></li>
-					<li v-if="authenticated" v-on:click="logout()"><i class="fas fa-power-off"></i></li>					
+			--> <nav class="float-right">
+				<ul> 
+					
+					<!-- THIS IS USEFUL FOR LATER YO -->
+					<!-- <li v-if="authenticated"><i class="fas fa-user-circle"></i></li>
+					<li v-if="administrator"><i class="fas fa-cog"></i></li> -->
 				</ul>
 				</nav>
-			</header>
+			<!-- </header> -->
+<div v-if="authenticated">
+			<img id="logo" src="images/av-logo.svg" width="200px">
+
+            <nav role="navigation">
+                    <div id="menuToggle">
+            <input id="checkbox" type="checkbox"/>
+                    
+            <span></span>
+            <span></span>
+            <span></span>
+           
+        <ul id="menu">
+                <li v-if="administrator">EDIT PROFILE</li>
+                <li v-on:click="logout()">LOG OUT</li>
+        </ul>
+</div>
+        
+    </div>
+    </nav>
 		</div> 
 		
 		<!-- <div class="toast float-right" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2500">

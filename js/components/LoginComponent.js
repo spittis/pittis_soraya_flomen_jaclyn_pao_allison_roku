@@ -2,26 +2,26 @@
 
 export default {
     template: `
-        <div class="container">
+        <div>
         
 
 	<img id="bkgrd-mobile" src="images/mountains-stars-mobile.jpg">
 	<img id="bkgrd-tablet" src="images/mountains-stars-mobile.jpg">
 	<img id="bkgrd-desktop" src="images/mountains-stars.jpg">
-	<router-link :to="{ path: '/users'}"><img id="home-logo" src="images/av-logo.svg"></router-link> 
+	<img id="home-logo" src="images/av-logo.svg">
 
     <div id="sign-in">
             <form id="signup-mob" action="">
                     <h3>Sign In</h3>
-                    <label class="sr-only" for="inlineFormInputName">Username</label><br>
-                    <input v-model="input.username" type="text" class="form-control" id="inlineFormInputName" placeholder="USERNAME" required><br>
+                    <label for="inlineFormInputName">Username</label><br>
+                    <input v-model="input.username" type="text" class="form-control" id="inlineFormInputName username" placeholder="USERNAME" required><br>
             
-                    <label class="sr-only" for="inlineFormPassword">Password</label><br>
-                    <input v-model="input.password" type="password" class="form-control" id="inlineFormPassword" placeholder="PASSWORD" required><br>
+                    <label for="inlineFormPassword">Password</label><br>
+                    <input v-model="input.password" type="password" class="form-control" id="inlineFormPassword pass" placeholder="PASSWORD" required><br>
                 </form>
 
                         <div id="login-buttons" class="col-auto my-1">
-                            <a><button v-on:click.prevent="login()" type="submit" class="btn btn-primary">SIGN IN!</button></a>
+                            <button v-on:click.prevent="login()" type="submit"><a>SIGN IN</a></button>
                             <a href="admin/admin_createuser.php">Sign Up</a>
                         </div>
     </div>
@@ -29,7 +29,7 @@ export default {
 
 
 <div id="roku-logo">
-		<a href="https://www.roku.com/en-ca/"><img id="roku-logo" src="images/roku-logo.png"></a>
+		<a target="_blank" href="https://www.roku.com/en-ca/"><img id="roku-logo" src="images/roku-logo.png"></a>
 		
 </div>
         </div>
