@@ -12,8 +12,8 @@ export default {
         <div class="row" v-if="activeMediaType == 'video' && retrievedMedia.length > 0">
             <div class="col-12 order-2 order-md-1 col-md-3 media-container">
                 <h4 class="media-title">{{currentMediaDetails.movie_title}}</h4>
-                <p class="media-details" v-html="currentMediaDetails.movie_storyline"></p>
-                <span class="media-time">{{currentMediaDetails.movie_runtime}}</span>
+                <p class="media-details" v-html="currentMediaDetails.movie_director"></p>
+                <span class="media-time">{{currentMediaDetails.movie_runtime}} minutes</span>
                 <span class="media-year">Released {{currentMediaDetails.movie_year}}</span>
             </div>
 
