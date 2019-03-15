@@ -27,7 +27,7 @@ export default {
             <div class="col-12 order-2 order-md-1 col-md-3 media-container">
                 <h4 class="media-title">{{currentMediaDetails.tv_title}}</h4>
                 <p>Seasons Available:</p><p class="media-details" v-html="currentMediaDetails.tv_season"></p>
-                <span class="media-time">{{currentMediaDetails.tv_runtime}}</span>
+                <span class="media-time">Runtime: {{currentMediaDetails.tv_runtime}} minutes</span>
                 <span class="media-year">Released: {{currentMediaDetails.tv_released}}</span>
             </div>
 
@@ -46,7 +46,7 @@ export default {
             </div>
 
             <div class="col-12 order-1 order-md-2 col-md-6 audio-wrapper">
-                <audio autoplay controls :src="'audio/' + currentMediaDetails.audio_src"/>
+                <audio autoplay controls :src="'audio/' + currentMediaDetails.audio_song"/>
                 <img :src="'images/' + currentMediaDetails.audio_cover" alt="album art" class="img-fluid"/>
             </div>
         </div>
@@ -65,64 +65,70 @@ export default {
             </nav>
 
             <div class="col-12 col-sm-9 media-info">
-                <!-- genres for video -->
+                <!-- eras for video -->
                     <ul v-if="activeMediaType == 'video'" class="media-genres">
                         <li>
-                            <a href="action" @click.prevent="loadMedia('action', 'video')">Action</a>
+                            <a href="1950" @click.prevent="loadMedia('1950', 'video')">1950</a>
                         </li>
                         <li>
-                            <a href="comedy" @click.prevent="loadMedia('comedy', 'video')">Comedy</a>
+                            <a href="1960" @click.prevent="loadMedia('1960', 'video')">1960</a>
                         </li>
                         <li>
-                            <a href="family" @click.prevent="loadMedia('family', 'video')">Family</a>
+                            <a href="1970" @click.prevent="loadMedia('1970', 'video')">1970</a>
                         </li>
                         <li>
-                            <a href="sci-fi" @click.prevent="loadMedia('sci-fi', 'video')">Sci-Fi</a>
+                            <a href="1980" @click.prevent="loadMedia('1980', 'video')">1980</a>
                         </li>
                         <li>
-                            <a href="drama" @click.prevent="loadMedia('drama', 'video')">Drama</a>
-                        </li>
-                        <li>
-                            <a href="romance" @click.prevent="loadMedia('romance', 'video')">Romance</a>
+                            <a href="1990" @click.prevent="loadMedia('1990', 'video')">1990</a>
                         </li>
                         <li>
                             <a href="horror" @click.prevent="loadMedia(null, 'video')">All</a>
                         </li>
                     </ul>
 
-                <!-- genres for audio -->
+                <!-- eras for audio -->
                 <ul v-if="activeMediaType == 'audio'" class="media-genres">
-                        <li>
-                            <a href="pop" @click.prevent="loadMedia('pop', 'audio')">Pop</a>
-                        </li>
-                        <li>
-                            <a href="rock" @click.prevent="loadMedia('rock', 'audio')">Rock</a>
-                        </li>
-                        <li>
-                            <a href="soundtrack" @click.prevent="loadMedia('soundtrack', 'audio')">Soundtrack</a>
-                        </li>
-                        <li>
-                            <a href="all" @click.prevent="loadMedia(null, 'audio')">All</a>
-                        </li>
+                <li>
+                <a href="1950" @click.prevent="loadMedia('1950', 'audio')">1950</a>
+            </li>
+            <li>
+                <a href="1960" @click.prevent="loadMedia('1960', 'audio')">1960</a>
+            </li>
+            <li>
+                <a href="1970" @click.prevent="loadMedia('1970', 'audio')">1970</a>
+            </li>
+            <li>
+                <a href="1980" @click.prevent="loadMedia('1980', 'audio')">1980</a>
+            </li>
+            <li>
+                <a href="1990" @click.prevent="loadMedia('1990', 'audio')">1990</a>
+            </li>
+            <li>
+                <a href="horror" @click.prevent="loadMedia(null, 'audio')">All</a>
+            </li>
                     </ul>
 
-                    <!-- genres for tv -->
+                    <!-- eras for tv -->
                     <ul v-if="activeMediaType == 'television'" class="media-genres">
                     <li>
-                        <a href="action" @click.prevent="loadMedia('action', 'television')">Action</a>
-                    </li>
-                    <li>
-                        <a href="comedy" @click.prevent="loadMedia('comedy', 'television')">Comedy</a>
-                    </li>
-                    <li>
-                        <a href="family" @click.prevent="loadMedia('family', 'television')">Family</a>
-                    </li>
-                    <li>
-                        <a href="horror" @click.prevent="loadMedia('horror', 'television')">Fantasy</a>
-                    </li>
-                    <li>
-                        <a href="horror" @click.prevent="loadMedia(null, 'television')">All</a>
-                    </li>
+                            <a href="1950" @click.prevent="loadMedia('1950', 'television')">1950</a>
+                        </li>
+                        <li>
+                            <a href="1960" @click.prevent="loadMedia('1960', 'television')">1960</a>
+                        </li>
+                        <li>
+                            <a href="1970" @click.prevent="loadMedia('1970', 'television')">1970</a>
+                        </li>
+                        <li>
+                            <a href="1980" @click.prevent="loadMedia('1980', 'television')">1980</a>
+                        </li>
+                        <li>
+                            <a href="1990" @click.prevent="loadMedia('1990', 'television')">1990</a>
+                        </li>
+                        <li>
+                            <a href="horror" @click.prevent="loadMedia(null, 'television')">All</a>
+                        </li>
                 </ul>
 
                 <div class="thumb-wrapper clearfix">
