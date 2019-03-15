@@ -6,16 +6,16 @@ import UserComponent from './UserComponent.js';
 export default {
 	template: `
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<h1 class="user-message">{{ message }}</h1>
-			</div>
-
-
-			<user v-for="(user, index) in userList" :liveuser="user" :key="index"></user>     
-
+	<div class="row">
+		<div class="col-sm-12">
+			<h1 id="whoWatch" >{{ message }}</h1>
 		</div>
+
+
+		<user v-for="(user, index) in userList" :liveuser="user" :key="index"></user>     
+
 	</div>
+</div>
 	`,
 
 	created: function() {
@@ -25,7 +25,7 @@ export default {
 
 	data() {
 	  return {
-		message: `Who's Using Roku?`,
+		message: `Who's Watching?`,
 
 		userList: []
 	  }
