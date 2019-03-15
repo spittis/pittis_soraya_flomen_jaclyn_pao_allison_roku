@@ -11,27 +11,43 @@ export default {
     <!-- render this if we're viewing television or film -->
         <div class="row" v-if="activeMediaType == 'video' && retrievedMedia.length > 0">
             <div class="col-12 order-2 order-md-1 col-md-3 media-container">
-                <h4 class="media-title">{{currentMediaDetails.movies_title}}</h4>
-                <p class="media-details" v-html="currentMediaDetails.movies_storyline"></p>
-                <span class="media-time">{{currentMediaDetails.movies_runtime}}</span>
-                <span class="media-year">Released in {{currentMediaDetails.movies_year}}</span>
+                <h4 class="media-title">{{currentMediaDetails.movie_title}}</h4>
+                <p class="media-details" v-html="currentMediaDetails.movie_storyline"></p>
+                <span class="media-time">{{currentMediaDetails.movie_runtime}}</span>
+                <span class="media-year">Released {{currentMediaDetails.movie_year}}</span>
             </div>
 
             <div class="col-12 order-1 order-md-2 col-md-9 media-container">
-                <video autoplay controls muted :src="'video/' + currentMediaDetails.movies_trailer" class="fs-video"></video>
+                <video autoplay controls muted :src="'video/' + currentMediaDetails.movie_trailer" class="fs-video"></video>
             </div>
         </div>
 
+        <!-- render this if we're viewing television -->
+        <div class="row" v-if="activeMediaType == 'television' && retrievedMedia.length > 0">
+            <div class="col-12 order-2 order-md-1 col-md-3 media-container">
+                <h4 class="media-title">{{currentMediaDetails.tv_title}}</h4>
+                <p>Seasons Available:</p><p class="media-details" v-html="currentMediaDetails.tv_season"></p>
+                <span class="media-time">Runtime: {{currentMediaDetails.tv_runtime}} minutes</span>
+                <span class="media-year">Released: {{currentMediaDetails.tv_released}}</span>
+            </div>
+
+            <div class="col-12 order-1 order-md-2 col-md-9 media-container">
+                <video autoplay controls muted :src="'video/' + currentMediaDetails.tv_trailer" class="fs-video"></video>
+            </div>
+        </div>
+
+
         <div class="row" v-if="activeMediaType == 'audio' && retrievedMedia.length > 0">
             <div class="col-12 order-2 order-md-1 col-md-6 media-container">
-                <h4 class="media-title">{{currentMediaDetails.audio_artist}} * {{currentMediaDetails.audio_title}}</h4>
-                <p class="media-details" v-html="currentMediaDetails.audio_storyline"></p>
-                <span class="media-year">Released in {{currentMediaDetails.audio_year}}</span>              
+                <h4 class="media-title">{{currentMediaDetails.audio_title}}</h4>
+                <h5>{{currentMediaDetails.audio_artist}}</h5>
+                <p class="media-details" v-html="currentMediaDetails.audio_runtime"></p>
+                <span class="media-year">Released: {{currentMediaDetails.audio_released}}</span>              
             </div>
 
             <div class="col-12 order-1 order-md-2 col-md-6 audio-wrapper">
-                <audio autoplay controls :src="'audio/' + currentMediaDetails.audio_src"/>
-                <img :src="'images/audio/' + currentMediaDetails.audio_cover" alt="album art" class="img-fluid"/>
+                <audio autoplay controls :src="'audio/' + currentMediaDetails.audio_song"/>
+                <img :src="'images/' + currentMediaDetails.audio_cover" alt="album art" class="img-fluid"/>
             </div>
         </div>
 
@@ -49,46 +65,76 @@ export default {
             </nav>
 
             <div class="col-12 col-sm-9 media-info">
-                <!-- genres for video -->
+                <!-- eras for video -->
                     <ul v-if="activeMediaType == 'video'" class="media-genres">
                         <li>
-                            <a href="action" @click.prevent="loadMedia('action', null)">Action</a>
+                            <a href="1950" @click.prevent="loadMedia('1950', 'video')">1950</a>
                         </li>
                         <li>
-                            <a href="comedy" @click.prevent="loadMedia('comedy', null)">Comedy</a>
+                            <a href="1960" @click.prevent="loadMedia('1960', 'video')">1960</a>
                         </li>
                         <li>
-                            <a href="family" @click.prevent="loadMedia('family', null)">Family</a>
+                            <a href="1970" @click.prevent="loadMedia('1970', 'video')">1970</a>
                         </li>
                         <li>
-                            <a href="horror" @click.prevent="loadMedia('fantasy', null)">Fantasy</a>
+                            <a href="1980" @click.prevent="loadMedia('1980', 'video')">1980</a>
                         </li>
                         <li>
-                            <a href="horror" @click.prevent="loadMedia(null, null)">All</a>
+                            <a href="1990" @click.prevent="loadMedia('1990', 'video')">1990</a>
+                        </li>
+                        <li>
+                            <a href="horror" @click.prevent="loadMedia(null, 'video')">All</a>
                         </li>
                     </ul>
 
-                <!-- genres for audio -->
-                <ul v-else class="media-genres">
-                        <li>
-                            <a href="action" @click.prevent="loadMedia('alternative', null)">Alternative</a>
-                        </li>
-                        <li>
-                            <a href="comedy" @click.prevent="loadMedia('blues', null)">Blues</a>
-                        </li>
-                        <li>
-                            <a href="family" @click.prevent="loadMedia('rock', null)">Rock</a>
-                        </li>
-                        <li>
-                            <a href="horror" @click.prevent="loadMedia('soundtrack', null)">Soundtracks</a>
-                        </li>
-                        <li>
-                            <a href="horror" @click.prevent="loadMedia(null, 'audio')">All</a>
-                        </li>
+                <!-- eras for audio -->
+                <ul v-if="activeMediaType == 'audio'" class="media-genres">
+                <li>
+                <a href="1950" @click.prevent="loadMedia('1950', 'audio')">1950</a>
+            </li>
+            <li>
+                <a href="1960" @click.prevent="loadMedia('1960', 'audio')">1960</a>
+            </li>
+            <li>
+                <a href="1970" @click.prevent="loadMedia('1970', 'audio')">1970</a>
+            </li>
+            <li>
+                <a href="1980" @click.prevent="loadMedia('1980', 'audio')">1980</a>
+            </li>
+            <li>
+                <a href="1990" @click.prevent="loadMedia('1990', 'audio')">1990</a>
+            </li>
+            <li>
+                <a href="horror" @click.prevent="loadMedia(null, 'audio')">All</a>
+            </li>
                     </ul>
+
+                    <!-- eras for tv -->
+                    <ul v-if="activeMediaType == 'television'" class="media-genres">
+                    <li>
+                            <a href="1950" @click.prevent="loadMedia('1950', 'television')">1950</a>
+                        </li>
+                        <li>
+                            <a href="1960" @click.prevent="loadMedia('1960', 'television')">1960</a>
+                        </li>
+                        <li>
+                            <a href="1970" @click.prevent="loadMedia('1970', 'television')">1970</a>
+                        </li>
+                        <li>
+                            <a href="1980" @click.prevent="loadMedia('1980', 'television')">1980</a>
+                        </li>
+                        <li>
+                            <a href="1990" @click.prevent="loadMedia('1990', 'television')">1990</a>
+                        </li>
+                        <li>
+                            <a href="horror" @click.prevent="loadMedia(null, 'television')">All</a>
+                        </li>
+                </ul>
+
                 <div class="thumb-wrapper clearfix">
-                    <img v-if="activeMediaType == 'video'" v-for="media in retrievedMedia" :src="'images/video/' + media.movies_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb">
-                    <img v-if="activeMediaType == 'audio'" v-for="media in retrievedMedia" :src="'images/audio/' + media.audio_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb audio-thumb">
+                    <img v-if="activeMediaType == 'video'" v-for="media in retrievedMedia" :src="'images/' + media.movie_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb video-thumb">
+                    <img v-if="activeMediaType == 'audio'" v-for="media in retrievedMedia" :src="'images/' + media.audio_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb audio-thumb">
+                    <img v-if="activeMediaType == 'television'" v-for="media in retrievedMedia" :src="'images/' + media.tv_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb television-thumb">
                 </div>
             </div>       
         </div> <!-- end 2-up for media info -->
@@ -134,7 +180,7 @@ export default {
             }
             // build the url based on any filter we pass in (will need to expand on this for audio)
 
-            let url = (filter == null) ? `./admin/index.php?media=${this.activeMediaType}` : `./admin/index.php?media=${this.mediaType}&&filter=${filter}`;
+            let url = (filter == null) ? `./admin/index.php?media=${this.activeMediaType}` : `./admin/index.php?media=${mediaType}&&filter=${filter}`;
 
             fetch(url)
                 .then(res => res.json())
