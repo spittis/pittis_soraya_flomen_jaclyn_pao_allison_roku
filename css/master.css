@@ -26,7 +26,6 @@ body {
   background-color: black;
   color: white;
   margin-bottom: 100px;
-  background: url(../images/gunmetal.jpg) repeat;
 }
 
 a {
@@ -93,21 +92,6 @@ nav:not(.side-nav) ul li {
 .user-message {
   text-align: center;
   font-size: 2rem;
-}
-
-.user-message {
-  margin: 0.25em 0 1em;
-}
-
-.card {
-  cursor: pointer;
-  color: white;
-  background: #6C3C97;
-  border: 4px solid #522d73;
-  margin-bottom: 1em;
-}
-.card .card-body p {
-  margin: 10px 0 0;
 }
 
 .fs-video {
@@ -229,39 +213,6 @@ audio {
   position: absolute;
   bottom: 12%;
   opacity: 0.8;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-  background-color: #1a1818;
-}
-footer p {
-  display: inline-block;
-  padding-left: 1em;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-footer ul {
-  list-style-type: none;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  margin-bottom: 0;
-  max-width: 95px;
-}
-footer ul li {
-  font-size: 2.5em;
-  display: inline-block;
-  margin-right: 0.4em;
-  color: rgba(255, 255, 255, 0.3);
 }
 
 @media only screen and (max-width: 479px) {
@@ -423,9 +374,41 @@ footer ul li {
     border: none;
   }
 }
-.roku-jumbotron {
-  color: #333;
-  margin: 70px 30px 0 !important;
+.card-body p {
+  margin: 10px 0 0;
+  color: #00EEFF;
+  font-family: "inception", sans-serif;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+body {
+  background-color: black;
+}
+
+.card-body img {
+  cursor: pointer;
+  width: 75%;
+}
+
+#logo {
+  margin-left: 4%;
+}
+
+#whoWatch {
+  color: #00EEFF;
+  font-family: "inception", sans-serif;
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+.people {
+  margin-bottom: 5%;
+}
+
+.row {
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -496,6 +479,228 @@ footer ul li {
   }
   .media-type li:last-of-type {
     border-bottom: none;
+  }
+}
+@media (max-width: 479px) {
+  #logo {
+    margin-left: 3%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+  }
+
+  #menuToggle {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    top: 5%;
+    right: 5%;
+  }
+
+  #menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  #menuToggle span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #D742D8;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  }
+
+  #menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(47deg) translate(2px, -1px);
+    background: white;
+  }
+
+  #menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+  }
+
+  #menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-47deg) translate(0, -1px);
+  }
+
+  #menu {
+    position: fixed;
+    margin: -100px -60px 0 -380px;
+    width: 200px;
+    padding-top: 75px;
+    padding-bottom: 25px;
+    background: #00EEFF;
+    list-style-type: none;
+    transform-origin: 0% 0%;
+    transform: translate(120%, 0);
+    transition: transform 0.7s;
+    text-decoration: none;
+  }
+
+  #menu li {
+    padding: 15px 15px 10px 0px;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: white;
+  }
+
+  #menu a {
+    text-decoration: none;
+  }
+
+  #menu li a {
+    text-decoration: none;
+  }
+
+  #menuToggle input:checked ~ ul {
+    transform: none;
+  }
+
+  #loginButtons {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    border-color: #00EEFF;
+    border: 5px;
+    margin-top: 30px;
+  }
+
+  #loginButtons a {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    background: #ffffff;
+    padding: 7px 40px 7px 40px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #00EEFF;
+    border-width: 2px;
+    margin: 15px;
+    color: #000;
+  }
+
+  #login {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 480px) and (max-width: 1024px) {
+  #logo {
+    width: 35%;
+    margin-top: 2%;
+    margin-left: 4%;
+    float: left;
+    z-index: 1;
+  }
+
+  #menutoggle {
+    display: none;
+  }
+
+  #move {
+    clear: both;
+    margin-top: 10%;
+  }
+
+  #checkbox {
+    display: none;
+  }
+
+  #menu li {
+    padding: 5px 10px 0px 10px;
+    display: block;
+    color: #00EEFF;
+    font-weight: lighter;
+    text-align: center;
+    float: left;
+    font-size: 80%;
+    font-weight: bold;
+    font-size: 1em;
+    border-bottom: 5px solid black;
+  }
+
+  #menu {
+    list-style-type: none;
+    z-index: 1;
+    text-align: center;
+    float: right;
+    padding-right: 8%;
+    padding-top: 5%;
+  }
+
+  #menu li:hover {
+    border-bottom: 5px solid #D742D8;
+  }
+}
+@media (min-width: 1024px) {
+  /*NAVIGATION*/
+  #menutoggle {
+    display: none;
+  }
+
+  #logo {
+    width: 10%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 3%;
+    float: left;
+    z-index: 1;
+  }
+
+  #move {
+    clear: both;
+    margin-top: 10%;
+  }
+
+  #checkbox {
+    display: none;
+  }
+
+  #menu li {
+    padding: 5px 5px 0px 5px;
+    display: block;
+    color: #00EEFF;
+    text-align: center;
+    float: left;
+    font-weight: bold;
+    border-bottom: 5px solid black;
+  }
+
+  #menu {
+    list-style-type: none;
+    z-index: 1;
+    text-align: center;
+    float: right;
+    padding-right: 4%;
+    padding-top: 3%;
+    padding-bottom: 1%;
+  }
+
+  #menu li {
+    padding: 10px;
+    display: block;
+    color: #00EEFF;
+    text-align: center;
+    float: left;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-right: 1em;
+  }
+
+  #menu li:hover {
+    border-bottom: 5px solid #D742D8;
   }
 }
 
