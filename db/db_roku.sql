@@ -3,18 +3,12 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 15, 2019 at 01:10 AM
+-- Generation Time: Mar 15, 2019 at 06:43 PM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `db_roku`
@@ -110,10 +104,10 @@ INSERT INTO `tbl_era` (`era_id`, `era_name`) VALUES
 
 CREATE TABLE `tbl_movies` (
   `movie_id` int(20) NOT NULL,
-  `movie_type` varchar(20) NOT NULL,
   `movie_cover` varchar(50) NOT NULL,
   `movie_title` varchar(50) NOT NULL,
-  `movie_year` date NOT NULL,
+  `movie_director` varchar(30) NOT NULL,
+  `movie_year` year(4) NOT NULL,
   `movie_runtime` varchar(20) NOT NULL,
   `movie_trailer` varchar(100) NOT NULL,
   `movie_rating` varchar(20) NOT NULL
@@ -123,17 +117,17 @@ CREATE TABLE `tbl_movies` (
 -- Dumping data for table `tbl_movies`
 --
 
-INSERT INTO `tbl_movies` (`movie_id`, `movie_type`, `movie_cover`, `movie_title`, `movie_year`, `movie_runtime`, `movie_trailer`, `movie_rating`) VALUES
-(1, 'Movie', 'arrival.jpg', 'Arrival', '2016-11-11', '116 minutes', '', 'PG-13'),
-(2, 'Movie', 'beautyandthebeast.jpg', 'Beauty and the Beast', '2017-03-17', '129 min', '', 'PG'),
-(3, 'Movie', 'deadpool.png', 'Deadpool', '2016-02-12', '108 min', '', 'R'),
-(4, 'Movie', 'blackpanther.jpg', 'Black Panther', '2018-02-16', '134 min', '', 'PG-13'),
-(5, 'Movie', 'trolls.jpg', 'Trolls', '2016-11-04', '92 min', '', 'PG'),
-(6, 'Movie', 'starwars.jpg', 'Star Wars: Episode VII - The Force Awakens', '2015-12-18', '136 min', '', 'PG-13'),
-(7, 'Movie', 'silverliningsplaybook.jpg', 'Silver Linings Playbook', '2012-12-25', '122 min', '', 'R'),
-(8, 'Movie', 'whiplash.jpg', 'Whiplash', '2014-09-15', '106 min', '', 'R'),
-(9, 'Movie', 'inception.jpg', 'Inception', '2010-06-16', '148 min', '', 'PG-13'),
-(10, 'Movie', 'lifeofpi.png', 'Life of Pi', '2012-11-21', '127 min', '', 'PG');
+INSERT INTO `tbl_movies` (`movie_id`, `movie_cover`, `movie_title`, `movie_director`, `movie_year`, `movie_runtime`, `movie_trailer`, `movie_rating`) VALUES
+(1, 'RearWindow.jpg', 'Rear Window', 'Alfred Hitchcock', 1954, '112', 'RearWindow.mp4', 'PG'),
+(2, 'SinginintheRain.jpg', 'Singin\' In The Rain', 'Gene Kelly & Stanley Donen', 1952, '103', 'SinginintheRain.mp4', 'G'),
+(3, 'BonnieClyde.jpg', 'Bonnie and Clyde', 'Arthur Penn', 1967, '111', 'BonnieAndClyde.mp4', 'R'),
+(4, 'SoundofMusic.jpg', 'The Sound of Music', 'Robert Wise', 1965, '172', 'TheSoundofMusic.mp4', 'G'),
+(5, 'jaws.jpeg', 'Jaws', 'Steven Spielberg', 1975, '124', 'Jaws.mp4', 'PG'),
+(6, 'Carrie.jpg', 'Carrie', 'Brian De Palma', 1976, '98', 'Carrie.mp4', 'R'),
+(7, 'BacktotheFuture.jpg', 'Back to the Future', 'Robert Zemeckis', 1985, '116', 'BackToTheFuture.mp4', 'PG'),
+(8, 'The_Breakfast_Club.jpg', 'The Breakfast Club', 'John Hughes', 1985, '97', 'TheBreakfastClub.mp4', 'R'),
+(9, 'pulpfiction.jpg', 'Pulp Fiction', 'Quentin Tarantino', 1994, '154', 'PulpFiction.mp4', 'R'),
+(10, 'Titanic.jpeg', 'Titanic', 'James Cameron', 1997, '194', 'Titanic.mp4', 'PG-13');
 
 -- --------------------------------------------------------
 
@@ -146,6 +140,22 @@ CREATE TABLE `tbl_movies_era` (
   `movie_id` int(20) NOT NULL,
   `era_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_movies_era`
+--
+
+INSERT INTO `tbl_movies_era` (`movies_era_id`, `movie_id`, `era_id`) VALUES
+(1, 1, 1),
+(2, 2, 1),
+(3, 3, 2),
+(4, 4, 2),
+(5, 5, 3),
+(6, 6, 3),
+(7, 7, 4),
+(8, 8, 4),
+(9, 9, 5),
+(10, 10, 5);
 
 -- --------------------------------------------------------
 
@@ -276,7 +286,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_audio`
 --
 ALTER TABLE `tbl_audio`
-  MODIFY `audio_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `audio_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_audio_era`
@@ -288,7 +298,7 @@ ALTER TABLE `tbl_audio_era`
 -- AUTO_INCREMENT for table `tbl_era`
 --
 ALTER TABLE `tbl_era`
-  MODIFY `era_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `era_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_movies`
@@ -300,7 +310,7 @@ ALTER TABLE `tbl_movies`
 -- AUTO_INCREMENT for table `tbl_movies_era`
 --
 ALTER TABLE `tbl_movies_era`
-  MODIFY `movies_era_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `movies_era_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_tv`
@@ -312,14 +322,10 @@ ALTER TABLE `tbl_tv`
 -- AUTO_INCREMENT for table `tbl_tv_era`
 --
 ALTER TABLE `tbl_tv_era`
-  MODIFY `tv_era_id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `tv_era_id` tinyint(4) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
   MODIFY `user_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
