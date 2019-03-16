@@ -1,65 +1,55 @@
 @font-face {
-  font-family: "inception";
+  font-family: 'inception';
   src: url("../fonts/inception.ttf") format("truetype");
   font-weight: normal;
-  font-style: normal;
-}
+  font-style: normal; }
 @font-face {
-  font-family: "classybeautiful";
+  font-family: 'classybeautiful';
   src: url("../fonts/classybeautiful.ttf") format("truetype");
   font-weight: normal;
-  font-style: normal;
-}
+  font-style: normal; }
 * {
   border: 0;
   padding: 0;
-  margin: 0;
-}
+  margin: 0; }
 
 html {
   position: relative;
-  min-height: 100%;
-}
+  min-height: 100%; }
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: black;
   color: white;
-  margin-bottom: 100px;
-}
+  margin-bottom: 100px; }
 
 a {
   color: #00B7FF;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 header {
   background-color: #333;
   padding: 12px 14px;
   position: fixed;
   z-index: 500;
-  width: 100%;
-}
-header span {
-  margin-left: 15px;
-  font-weight: bolder;
-  font-size: 1.5em;
-  text-transform: uppercase;
-  position: relative;
-  top: 5px;
-}
+  width: 100%; }
+  header span {
+    margin-left: 15px;
+    font-weight: bolder;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    position: relative;
+    top: 5px; }
 
 nav:not(.side-nav) ul {
   right: 3em;
   list-style-type: none;
-  margin-bottom: 0;
-}
-nav:not(.side-nav) ul li {
-  display: inline-block;
-  font-size: 1.75em;
-  padding: 0 0.2em;
-  cursor: pointer;
-}
+  margin-bottom: 0; }
+  nav:not(.side-nav) ul li {
+    display: inline-block;
+    font-size: 1.75em;
+    padding: 0 0.2em;
+    cursor: pointer; }
 
 .toast {
   position: absolute;
@@ -67,69 +57,55 @@ nav:not(.side-nav) ul li {
   top: 4.25rem;
   z-index: 200;
   color: #333;
-  min-width: 175px;
-}
-.toast .toast-body span {
-  margin-left: 0.8rem;
-  position: relative;
-  top: -2px;
-  font-weight: bolder;
-}
+  min-width: 175px; }
+  .toast .toast-body span {
+    margin-left: 0.8rem;
+    position: relative;
+    top: -2px;
+    font-weight: bolder; }
 
 .fa-exclamation-triangle {
   color: red;
-  font-size: 1.5em;
-}
+  font-size: 1.5em; }
 
 .container > div:first-of-type {
-  margin-top: 53px;
-}
+  margin-top: 53px; }
 
 .display-4 {
-  font-size: 2.25rem;
-}
+  font-size: 2.25rem; }
 
 .user-message {
   text-align: center;
-  font-size: 2rem;
-}
+  font-size: 2rem; }
 
 .fs-video {
-  width: 100%;
-}
+  width: 100%; }
 
 .media-container {
-  background: black;
-}
+  background: black; }
 
 .media-container:first-of-type {
-  padding-bottom: 1em;
-}
+  padding-bottom: 1em; }
 
 .media-container:last-of-type {
   padding-left: 0;
-  padding-right: 0;
-}
+  padding-right: 0; }
 
 .media-title {
   font-size: 1.5em;
   padding-top: 1em;
-  font-weight: bolder;
-}
+  font-weight: bolder; }
 
 .media-details {
   font-size: 1.2em;
-  padding: 0.5em 0;
-}
+  padding: 0.5em 0; }
 
 .media-year, .media-time {
-  font-size: 1em;
-}
+  font-size: 1em; }
 
 .media-year {
   display: block;
-  float: right;
-}
+  float: right; }
 
 .side-nav {
   background: #030e0e;
@@ -182,20 +158,16 @@ nav:not(.side-nav) ul li {
 
 .media-info {
   padding-left: 0;
-  padding-right: 0;
-}
-.media-info > div {
-  padding: 0 10px;
-}
+  padding-right: 0; }
+  .media-info > div {
+    padding: 0 10px; }
 
 .media-thumb {
   height: 140px;
-  margin: 0.7em;
-}
+  margin: 0.7em; }
 
 .audio-thumb {
-  height: 150px;
-}
+  height: 150px; }
 
 .audio-wrapper {
   background: white;
@@ -212,8 +184,7 @@ audio {
   margin: 0 13%;
   position: absolute;
   bottom: 12%;
-  opacity: 0.8;
-}
+  opacity: 0.8; }
 
 /* MODAL */
 .closemovie {
@@ -315,16 +286,13 @@ audio {
     width: 100%;
     z-index: -10;
     margin: 0;
-    padding: 0px;
-  }
+    padding: 0px; }
 
   #bkgrd-tablet {
-    display: none;
-  }
+    display: none; }
 
   #bkgrd-desktop {
-    display: none;
-  }
+    display: none; }
 
   #home-logo {
     width: 350px;
@@ -332,16 +300,14 @@ audio {
     margin: 0 auto;
     margin-left: 7%;
     margin-top: 20%;
-    position: relative;
-  }
+    position: relative; }
 
   #login-buttons {
     text-align: center;
     text-transform: uppercase;
     font-family: "Avenir Next", Helvetica, sans-serif;
     border-color: #00EEFF;
-    border: 5px;
-  }
+    border: 5px; }
 
   #login-buttons a {
     text-align: center;
@@ -354,48 +320,40 @@ audio {
     border-color: #00EEFF;
     border-width: 2px;
     margin: 10px;
-    color: #000;
-  }
+    color: #000; }
 
   #roku-logo {
     margin: 0 auto;
     width: 70px;
     height: auto;
     margin-top: 100px;
-    border: none;
-  }
-}
+    border: none; } }
 @media only screen and (min-width: 480px) and (max-width: 1023px) {
   #bkgrd-mobile {
-    display: none;
-  }
+    display: none; }
 
   #bkgrd-tablet {
     position: absolute;
     width: 100%;
     z-index: -10;
     margin: 0;
-    padding: 0px;
-  }
+    padding: 0px; }
 
   #bkgrd-desktop {
-    display: none;
-  }
+    display: none; }
 
   #home-logo {
     width: 600px;
     height: auto;
     margin: 0 auto;
     margin-left: 10%;
-    margin-top: 30%;
-  }
+    margin-top: 30%; }
 
   #login-buttons {
     text-align: center;
     text-transform: uppercase;
     font-family: "Avenir Next", Helvetica, sans-serif;
-    margin-top: 10%;
-  }
+    margin-top: 10%; }
 
   #login-buttons a {
     text-align: center;
@@ -408,47 +366,39 @@ audio {
     border-width: 2px;
     border: 5px;
     margin: 30px;
-    color: #000;
-  }
+    color: #000; }
 
   #roku-logo {
     margin: 0 auto;
     width: 100px;
     height: auto;
     margin-top: 45%;
-    border: none;
-  }
-}
+    border: none; } }
 @media only screen and (min-width: 1024px) {
   #bkgrd-mobile {
-    display: none;
-  }
+    display: none; }
 
   #bkgrd-tablet {
-    display: none;
-  }
+    display: none; }
 
   #bkgrd-desktop {
     position: absolute;
     width: 100%;
     z-index: -10;
     margin: 0;
-    padding: 0px;
-  }
+    padding: 0px; }
 
   #home-logo {
     width: 500px;
     height: auto;
     margin: 0 auto;
     margin-left: 33%;
-    margin-top: 10%;
-  }
+    margin-top: 10%; }
 
   #login-buttons {
     text-align: center;
     text-transform: uppercase;
-    font-family: "Avenir Next", Helvetica, sans-serif;
-  }
+    font-family: "Avenir Next", Helvetica, sans-serif; }
 
   #login-buttons a {
     background: #ffffff;
@@ -457,92 +407,72 @@ audio {
     border-color: #00EEFF;
     border-width: 2px;
     border: 5px;
-    color: #000;
-  }
+    color: #000; }
 
   #roku-logo {
     margin: 0 auto;
     width: 100px;
     height: auto;
     margin-top: 125px;
-    border: none;
-  }
-}
+    border: none; } }
 .card-body p {
   margin: 10px 0 0;
   color: #00EEFF;
   font-family: "inception", sans-serif;
   font-size: 2em;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 body {
-  background-color: black;
-}
+  background-color: black; }
 
 .card-body img {
   cursor: pointer;
-  width: 75%;
-}
+  width: 75%; }
 
 #logo {
-  margin-left: 4%;
-}
+  margin-left: 4%; }
 
 #whoWatch {
   color: #00EEFF;
   font-family: "inception", sans-serif;
   font-size: 3em;
   text-align: center;
-  margin-bottom: 3%;
-}
+  margin-bottom: 3%; }
 
 .people {
-  margin-bottom: 5%;
-}
+  margin-bottom: 5%; }
 
 .row {
-  width: 100%;
-}
+  width: 100%; }
 
 @media screen and (min-width: 768px) {
   .user-message {
-    font-size: 2.5rem;
-  }
+    font-size: 2.5rem; }
 
   .media-title {
-    font-size: 1.25em;
-  }
+    font-size: 1.25em; }
 
   .media-year {
-    float: none;
-  }
+    float: none; }
 
   .media-container:first-of-type {
-    padding-bottom: 0;
-  }
+    padding-bottom: 0; }
 
   .media-thumb {
-    height: 165px;
-  }
+    height: 165px; }
 
   footer ul {
-    max-width: none;
-  }
-}
+    max-width: none; } }
 @media (min-width: 992px) {
   .display-4 {
-    font-size: 3.5rem;
-  }
+    font-size: 3.5rem; }
 
   .thumb-wrapper {
     max-height: 350px;
-    overflow-x: auto;
-  }
+    overflow-x: auto; }
 
   .media-title {
-    font-size: 1.75em;
-  }
+    font-size: 1.75em; }
 
   .media-type {
     list-style-type: none;
@@ -581,16 +511,14 @@ body {
   #logo {
     margin-left: 3%;
     margin-top: 4%;
-    margin-bottom: 4%;
-  }
+    margin-bottom: 4%; }
 
   #menuToggle {
     display: block;
     position: fixed;
     z-index: 1;
     top: 5%;
-    right: 5%;
-  }
+    right: 5%; }
 
   #menuToggle input {
     display: block;
@@ -601,8 +529,7 @@ body {
     left: -5px;
     cursor: pointer;
     opacity: 0;
-    z-index: 2;
-  }
+    z-index: 2; }
 
   #menuToggle span {
     display: block;
@@ -613,22 +540,18 @@ body {
     background: #D742D8;
     z-index: 1;
     transform-origin: 4px 0px;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-  }
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; }
 
   #menuToggle input:checked ~ span {
     opacity: 1;
     transform: rotate(47deg) translate(2px, -1px);
-    background: white;
-  }
+    background: white; }
 
   #menuToggle input:checked ~ span:nth-last-child(3) {
-    opacity: 0;
-  }
+    opacity: 0; }
 
   #menuToggle input:checked ~ span:nth-last-child(2) {
-    transform: rotate(-47deg) translate(0, -1px);
-  }
+    transform: rotate(-47deg) translate(0, -1px); }
 
   #menu {
     position: fixed;
@@ -641,84 +564,43 @@ body {
     transform-origin: 0% 0%;
     transform: translate(120%, 0);
     transition: transform 0.7s;
-    text-decoration: none;
-  }
+    text-decoration: none; }
 
   #menu li {
     padding: 15px 15px 10px 0px;
     font-weight: normal;
     text-transform: uppercase;
     font-size: 1.2em;
-    color: white;
-  }
+    color: white; }
 
   #menu a {
-    text-decoration: none;
-  }
+    text-decoration: none; }
 
   #menu li a {
-    text-decoration: none;
-  }
+    text-decoration: none; }
 
   #menuToggle input:checked ~ ul {
-    transform: none;
-  }
-
-  #loginButtons {
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Avenir Next", Helvetica, sans-serif;
-    border-color: #00EEFF;
-    border: 5px;
-    margin-top: 30px;
-  }
-
-  #loginButtons a {
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Avenir Next", Helvetica, sans-serif;
-    background: #ffffff;
-    padding: 7px 40px 7px 40px;
-    border-style: solid;
-    border-radius: 10px;
-    border-color: #00EEFF;
-    border-width: 2px;
-    margin: 15px;
-    color: #000;
-  }
-
-  #login {
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-  }
-
-  #sign-in {
-    margin-top: -30px;
-  }
+    transform: none; }
 
   #login-mobile {
     position: absolute;
     width: 100%;
     z-index: -10;
     margin: 0;
-    padding: 0px;
-  }
+    padding: 0px; }
 
   #login-tablet {
-    display: none;
-  }
+    display: none; }
 
   #login-desktop {
-    display: none;
-  }
+    display: none; }
 
   #logo {
     width: 40%;
     margin: 0 auto;
     text-align: center;
     margin-left: 30%;
-    padding-top: 20px;
-  }
+    padding-top: 20px; }
 
   h2 {
     font-family: "classybeautiful";
@@ -726,8 +608,7 @@ body {
     font-size: 3em;
     color: white;
     position: relative;
-    margin: 0;
-  }
+    margin: 0; }
 
   h3 {
     font-family: "Avenir Next", Helvetica, sans-serif;
@@ -737,8 +618,7 @@ body {
     position: relative;
     text-transform: uppercase;
     margin: 0;
-    margin-top: 20px;
-  }
+    margin-top: 20px; }
 
   p {
     font-family: "Avenir Next", Helvetica, sans-serif;
@@ -747,18 +627,15 @@ body {
     margin: 0 auto;
     color: white;
     font-size: 0.9em;
-    padding: 10px;
-  }
+    padding: 10px; }
 
   #signup {
-    display: none;
-  }
+    display: none; }
 
   #signup-mob {
     text-align: center;
     width: 75%;
-    margin: 0 auto;
-  }
+    margin: 0 auto; }
 
   input[type=text] {
     padding: 10px;
@@ -767,8 +644,7 @@ body {
     width: 250px;
     border-width: 1px;
     border-color: #00EEFF;
-    margin: 0 auto;
-  }
+    margin: 0 auto; }
 
   input[type=password] {
     padding: 10px;
@@ -787,8 +663,7 @@ body {
     width: 250px;
     border-width: 1px;
     border-color: #00EEFF;
-    margin: 0 auto;
-  }
+    margin: 0 auto; }
 
   input[type=date] {
     padding: 10px;
@@ -847,21 +722,17 @@ body {
     margin-top: 2%;
     margin-left: 4%;
     float: left;
-    z-index: 1;
-  }
+    z-index: 1; }
 
   #menutoggle {
-    display: none;
-  }
+    display: none; }
 
   #move {
     clear: both;
-    margin-top: 10%;
-  }
+    margin-top: 10%; }
 
   #checkbox {
-    display: none;
-  }
+    display: none; }
 
   #menu li {
     padding: 5px 10px 0px 10px;
@@ -873,8 +744,7 @@ body {
     font-size: 80%;
     font-weight: bold;
     font-size: 1em;
-    border-bottom: 5px solid black;
-  }
+    border-bottom: 5px solid black; }
 
   #menu {
     list-style-type: none;
@@ -882,8 +752,7 @@ body {
     text-align: center;
     float: right;
     padding-right: 8%;
-    padding-top: 5%;
-  }
+    padding-top: 5%; }
 
   #menu li:hover {
     border-bottom: 5px solid #D742D8;
@@ -903,8 +772,7 @@ body {
 @media (min-width: 1024px) {
   /*NAVIGATION*/
   #menutoggle {
-    display: none;
-  }
+    display: none; }
 
   #logo {
     width: 10%;
@@ -912,17 +780,14 @@ body {
     margin-bottom: 1%;
     margin-left: 3%;
     float: left;
-    z-index: 1;
-  }
+    z-index: 1; }
 
   #move {
     clear: both;
-    margin-top: 10%;
-  }
+    margin-top: 10%; }
 
   #checkbox {
-    display: none;
-  }
+    display: none; }
 
   #menu li {
     padding: 5px 5px 0px 5px;
@@ -931,8 +796,7 @@ body {
     text-align: center;
     float: left;
     font-weight: bold;
-    border-bottom: 5px solid black;
-  }
+    border-bottom: 5px solid black; }
 
   #menu {
     list-style-type: none;
@@ -941,8 +805,7 @@ body {
     float: right;
     padding-right: 4%;
     padding-top: 3%;
-    padding-bottom: 1%;
-  }
+    padding-bottom: 1%; }
 
   #menu li {
     padding: 10px;
@@ -952,8 +815,7 @@ body {
     float: left;
     font-weight: bold;
     font-size: 1.1em;
-    margin-right: 1em;
-  }
+    margin-right: 1em; }
 
   #menu li:hover {
     border-bottom: 5px solid #D742D8;
@@ -966,8 +828,542 @@ body {
     color: white;
     position: relative;
     text-transform: uppercase;
+    margin: 0; } }
+@media only screen and (max-width: 479px) {
+  #bkgrd-mobile {
+    position: absolute;
+    width: 100%;
+    z-index: -10;
     margin: 0;
-  }
-}
+    padding: 0px; }
+
+  #bkgrd-tablet {
+    display: none; }
+
+  #bkgrd-desktop {
+    display: none; }
+
+  #home-logo {
+    width: 350px;
+    height: auto;
+    margin: 0 auto;
+    margin-left: 7%;
+    margin-top: 2%;
+    position: relative; }
+
+  #loginButtons {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    border: 5px;
+    margin-top: 30px; }
+
+  #loginButtons a {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    padding: 7px 40px 7px 40px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #00EEFF;
+    border-width: 2px;
+    margin: 15px;
+    color: #000; }
+
+  #login {
+    padding-bottom: 10px;
+    margin-bottom: 10px; }
+
+  #roku-logo {
+    margin: 0 auto;
+    width: 70px;
+    height: auto;
+    border: none;
+    margin-top: 20px; }
+
+  #sign-in {
+    margin-top: -50px; }
+
+  #login-buttons {
+    margin-top: -30px; }
+
+  input[type=submit] {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    border-color: #00EEFF;
+    border: 5px;
+    margin-top: 30px;
+    clear: both; } }
+@media only screen and (min-width: 480px) and (max-width: 1023px) {
+  #bkgrd-mobile {
+    display: none; }
+
+  #bkgrd-tablet {
+    position: absolute;
+    width: 100%;
+    z-index: -10;
+    margin: 0;
+    padding: 0px; }
+
+  #bkgrd-desktop {
+    display: none; }
+
+  #home-logo {
+    width: 600px;
+    height: auto;
+    margin: 0 auto;
+    margin-left: 10%;
+    margin-top: 30%; }
+
+  #loginButtons {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    margin-top: 10%; }
+
+  #loginButtons a {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    background: #ffffff;
+    padding: 7px 50px 7px 50px;
+    border-radius: 10px;
+    border-color: #00EEFF;
+    border-width: 2px;
+    border: 5px;
+    margin: 30px;
+    color: #000; }
+
+  #roku-logo {
+    margin: 0 auto;
+    width: 100px;
+    height: auto;
+    margin-top: 20%;
+    border: none; } }
+@media only screen and (min-width: 1024px) {
+  #bkgrd-mobile {
+    display: none; }
+
+  #bkgrd-tablet {
+    display: none; }
+
+  #bkgrd-desktop {
+    position: absolute;
+    width: 100%;
+    z-index: -10;
+    margin: 0;
+    padding: 0px; }
+
+  #home-logo {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    margin-left: 33%;
+    margin-top: 10%; }
+
+  #loginButtons {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    border-color: #00EEFF;
+    border: 5px;
+    margin-top: 30px; }
+
+  #loginButtons a {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    background: #ffffff;
+    padding: 7px 40px 7px 40px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #00EEFF;
+    border-width: 2px;
+    margin: 15px;
+    color: #000; }
+
+  #roku-logo {
+    margin: 0 auto;
+    width: 100px;
+    height: auto;
+    margin-top: 50px;
+    border: none; } }
+@media only screen and (max-width: 479px) {
+  #login-mobile {
+    position: absolute;
+    width: 100%;
+    z-index: -10;
+    margin: 0;
+    padding: 0px; }
+
+  #login-tablet {
+    display: none; }
+
+  #login-desktop {
+    display: none; }
+
+  #logo {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 30%;
+    padding-top: 20px; }
+
+  h2 {
+    font-family: "classybeautiful";
+    text-align: center;
+    font-size: 3em;
+    color: white;
+    position: relative;
+    margin: 0; }
+
+  h3 {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    position: relative;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 20px; }
+
+  p {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    color: white;
+    font-size: 0.9em;
+    padding: 10px; }
+
+  #signup {
+    display: none; }
+
+  #signup-mob {
+    text-align: center;
+    width: 75%;
+    margin: 0 auto; }
+
+  input[type=text] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 250px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto; }
+
+  input[type=password] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 250px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto; }
+
+  input[type=tel] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 250px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto; }
+
+  input[type=date] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 250px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto; }
+
+  input[type=email] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 250px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto; }
+
+  label {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    width: 75%;
+    text-align: left;
+    margin: 0 auto;
+    color: white;
+    font-size: 0.9em;
+    float: left;
+    clear: both;
+    padding-left: 10px;
+    margin-top: 10px; }
+
+  input[type=submit] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 50%;
+    margin-left: 50%;
+    border-width: 1px;
+    color: #00EEFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #D742D8;
+    margin: 0 auto;
+    clear: both;
+    margin-bottom: 20px; } }
+@media only screen and (min-width: 480px) and (max-width: 1023px) {
+  #login-mobile {
+    display: none; }
+
+  #login-tablet {
+    position: absolute;
+    width: 100%;
+    z-index: -10;
+    margin: 0;
+    padding: 0px; }
+
+  #login-desktop {
+    display: none; }
+
+  #logo {
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 35%;
+    padding-top: 20px; }
+
+  h2 {
+    font-family: "classybeautiful";
+    text-align: center;
+    font-size: 3em;
+    color: white;
+    position: relative;
+    margin: 0; }
+
+  h3 {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    position: relative;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 20px; }
+
+  p {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    color: white;
+    font-size: 0.9em;
+    padding: 10px; }
+
+  #signup {
+    display: none; }
+
+  #signup-mob {
+    text-align: center;
+    width: 75%;
+    margin: 0 auto; }
+
+  input[type=text] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 500px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-top: 15px; }
+
+  input[type=password] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 500px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-top: 15px; }
+
+  input[type=tel] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 500px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-top: 15px; }
+
+  input[type=date] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 500px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-top: 15px; }
+
+  input[type=email] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 500px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-top: 15px; }
+
+  input[type=submit] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 100%;
+    border-width: 1px;
+    color: #00EEFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #D742D8;
+    margin: 0 auto;
+    clear: both; }
+
+  label {
+    display: none; } }
+@media only screen and (min-width: 1024px) {
+  #login-mobile {
+    display: none; }
+
+  #login-tablet {
+    display: none; }
+
+  #login-desktop {
+    position: absolute;
+    width: 100%;
+    z-index: -10;
+    margin: 0;
+    padding: 0px; }
+
+  #logo {
+    width: 15%;
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 42%;
+    padding-top: 20px; }
+
+  h2 {
+    font-family: "classybeautiful";
+    text-align: center;
+    font-size: 2em;
+    color: white;
+    position: relative;
+    margin: 0; }
+
+  h3 {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    position: relative;
+    text-transform: uppercase;
+    margin: 0; }
+
+  p {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    color: white;
+    font-size: 0.9em;
+    padding: 10px; }
+
+  #signup {
+    display: none; }
+
+  #signup-mob {
+    text-align: center;
+    width: 75%;
+    margin: 0 auto; }
+
+  input[type=text] {
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 500px;
+    border-width: 2px;
+    border-color: #00EEFF;
+    margin: 0 auto; }
+
+  input[type=password] {
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 500px;
+    border-width: 2px;
+    border-color: #00EEFF;
+    margin: 0 auto; }
+
+  input[type=tel] {
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 500px;
+    border-width: 2px;
+    border-color: #00EEFF; }
+
+  input[type=date] {
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 500px;
+    border-width: 2px;
+    border-color: #00EEFF; }
+
+  input[type=email] {
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 500px;
+    border-width: 2px;
+    border-color: #00EEFF; }
+
+  input[type=submit] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 500px;
+    border-width: 1px;
+    border-color: #D742D8;
+    color: #00EEFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #D742D8;
+    margin: 0 auto;
+    margin-bottom: 20px; }
+
+  label {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    width: 75%;
+    text-align: left;
+    margin: 0 auto;
+    color: white;
+    font-size: 0.9em;
+    float: left;
+    clear: both;
+    margin-left: 24%;
+    margin-top: 5px;
+    text-transform: uppercase; } }
 
 /*# sourceMappingURL=master.css.map */
