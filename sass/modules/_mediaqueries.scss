@@ -1,8 +1,4 @@
 
-
-
-// THIS IS TREVORS STUFF
-
 @media screen and (min-width: 768px) {
     .user-message {
         font-size: 2.5rem;
@@ -38,10 +34,11 @@
     .media-type { 
         list-style-type: none;
         margin-bottom: 0;
+        cursor: pointer;
         
         li { 
             padding: 1rem;
-            border-bottom: thin solid $dark-bg;
+            border-bottom: thin solid #578ff74d;
             cursor: pointer;
             display: block;
             width: auto;
@@ -62,9 +59,14 @@
             }
         }
     
-        li:hover span:first-of-type { color: $roku-purple }
+        li:hover span:first-of-type { 
+            color: $pink;
+            cursor: pointer;
+         }
     
-        li:last-of-type { border-bottom: none; }
+        li:last-of-type { 
+            border-bottom: none;
+         }
     }
 }
 

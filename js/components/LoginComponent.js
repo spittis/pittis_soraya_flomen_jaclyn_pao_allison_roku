@@ -22,7 +22,7 @@ export default {
 
                         <div id="login-buttons" class="col-auto my-1">
                             <button v-on:click.prevent="login()" type="submit"><a>SIGN IN</a></button>
-                            <a href="admin/admin_createuser.php">Sign Up</a>
+                            <a href="signup.html">Sign Up</a>
                         </div>
     </div>
 
@@ -72,6 +72,7 @@ export default {
                     } else {
                         this.$emit("authenticated", true, data[0]);
                         this.$router.replace({ name: "users" });
+                        this.$emit("administator", true, data[0]);
                     }
                 })
              .catch(function(error) { 

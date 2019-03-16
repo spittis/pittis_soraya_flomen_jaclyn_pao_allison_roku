@@ -41,7 +41,8 @@
             <span></span>
            
         <ul id="menu">
-                <li v-if="administrator">EDIT PROFILE</li>
+				<li v-if="administrator">EDIT PROFILE</li>
+				<!-- <li v-if="$user_access === '1'">EDIT PROFILE</li> -->
                 <li v-on:click="logout()">LOG OUT</li>
         </ul>
 </div>
