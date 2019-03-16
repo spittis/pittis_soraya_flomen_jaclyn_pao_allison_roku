@@ -2,7 +2,7 @@
 
 ![logo](https://github.com/spittis/pittis_soraya_pao_allison_flomen_jaclyn_hw4/blob/master/images/av-logo.svg)
 
-This is an audio/video app that enables users to log in, filter, and select movies/tv shows/audio based on user profiles through Roku. Adults can now filter what their kids can and can't watch. Plus, children can easily navigate the app with the use of easy to use icons and big, bold imagery/text. 
+This is an audio/video app that enables users to log in, filter, and select movies, tv shows, and audio from the 1950s-1990s based on user profiles through Roku. Adults can now filter what their kids can and can't watch. Plus, children can easily navigate the app with the use of easy to use icons and big, bold imagery/text. 
 
 
 ## Getting Started
@@ -19,14 +19,16 @@ From the command line:
 ```
 $ git init
 Clone this repository
-$ git clone https://github.com/spittis/pittis_soraya_pao_allison_flomen_jaclyn_hw4.git
-$ cd pittis_soraya_pao_allison_flomen_jaclyn_hw4
-Open the index.html in a browser, Chrome and Safari work best
+$ git clone https://github.com/spittis/pittis_soraya_pao_allison_flomen_jaclyn_roku.git
+$ cd pittis_soraya_pao_allison_flomen_jaclyn_roku
+Open the index.html in a browser, Chrome works best
 ```
 
 ## Built With
 
-* [Animate.css](https://daneden.github.io/animate.css/) - The library of CSS animations
+* Vue
+* Vue Router 
+* Bootstrap 4
 
 
 ## Authors

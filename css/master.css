@@ -34,7 +34,7 @@ a {
 }
 
 header {
-  background-color: #1a1818;
+  background-color: #333;
   padding: 12px 14px;
   position: fixed;
   z-index: 500;
@@ -132,7 +132,7 @@ nav:not(.side-nav) ul li {
 }
 
 .side-nav {
-  background: #020202;
+  background: #030e0e;
 }
 
 .media-type {
@@ -151,12 +151,12 @@ nav:not(.side-nav) ul li {
   color: white;
 }
 .media-type li:hover span:first-of-type {
-  color: #6C3C97;
+  color: #D742D8;
 }
 
 .media-genres {
   list-style-type: none;
-  background: black;
+  background: rgba(16, 16, 16, 0.5);
   margin: 0;
   padding: 1em 1em 1em 1.5em;
 }
@@ -169,7 +169,7 @@ nav:not(.side-nav) ul li {
   text-decoration: none;
 }
 .media-genres li a:hover {
-  color: #6C3C97;
+  border-bottom: 5px solid #D742D8;
 }
 .media-genres li::after {
   content: "|";
@@ -198,11 +198,11 @@ nav:not(.side-nav) ul li {
 }
 
 .audio-wrapper {
-  background: #1a1818;
+  background: white;
 }
 .audio-wrapper img {
   max-width: 85%;
-  display: block;
+  display: inline;
   margin: 0 auto;
   padding: 4%;
 }
@@ -213,6 +213,100 @@ audio {
   position: absolute;
   bottom: 12%;
   opacity: 0.8;
+}
+
+/* MODAL */
+.closemovie {
+  position: absolute;
+  text-decoration: underline;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.closemovie:hover {
+  color: #efefef;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.portfolioModalmovie {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  padding-top: 105px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.closetv {
+  position: absolute;
+  text-decoration: underline;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.closetv:hover {
+  color: #efefef;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.portfolioModaltv {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  padding-top: 105px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.closeaud {
+  position: absolute;
+  text-decoration: underline;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.closeaud:hover {
+  color: #efefef;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.portfolioModalaud {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  padding-top: 105px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 @media only screen and (max-width: 479px) {
@@ -453,10 +547,11 @@ body {
   .media-type {
     list-style-type: none;
     margin-bottom: 0;
+    cursor: pointer;
   }
   .media-type li {
     padding: 1rem;
-    border-bottom: thin solid #1a1818;
+    border-bottom: thin solid #578ff74d;
     cursor: pointer;
     display: block;
     width: auto;
@@ -475,7 +570,8 @@ body {
     top: -6px;
   }
   .media-type li:hover span:first-of-type {
-    color: #6C3C97;
+    color: #D742D8;
+    cursor: pointer;
   }
   .media-type li:last-of-type {
     border-bottom: none;
@@ -595,6 +691,155 @@ body {
     padding-bottom: 10px;
     margin-bottom: 10px;
   }
+
+  #sign-in {
+    margin-top: -30px;
+  }
+
+  #login-mobile {
+    position: absolute;
+    width: 100%;
+    z-index: -10;
+    margin: 0;
+    padding: 0px;
+  }
+
+  #login-tablet {
+    display: none;
+  }
+
+  #login-desktop {
+    display: none;
+  }
+
+  #logo {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 30%;
+    padding-top: 20px;
+  }
+
+  h2 {
+    font-family: "classybeautiful";
+    text-align: center;
+    font-size: 3em;
+    color: white;
+    position: relative;
+    margin: 0;
+  }
+
+  h3 {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    position: relative;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  p {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    color: white;
+    font-size: 0.9em;
+    padding: 10px;
+  }
+
+  #signup {
+    display: none;
+  }
+
+  #signup-mob {
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  input[type=text] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 250px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto;
+  }
+
+  input[type=password] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 250px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto;
+  }
+
+  input[type=tel] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 250px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto;
+  }
+
+  input[type=date] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 250px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto;
+  }
+
+  input[type=email] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 250px;
+    border-width: 1px;
+    border-color: #00EEFF;
+    margin: 0 auto;
+  }
+
+  input[type=submit] {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 250px;
+    border-width: 1px;
+    border-color: #D742D8;
+    color: #00EEFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #D742D8;
+    margin: 0 auto;
+  }
+
+  label {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    width: 75%;
+    text-align: left;
+    margin: 0 auto;
+    color: white;
+    font-size: 0.9em;
+    float: left;
+    clear: both;
+    padding-left: 10px;
+    margin-top: 10px;
+  }
+
+  h3 {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+  }
 }
 @media (min-width: 480px) and (max-width: 1024px) {
   #logo {
@@ -642,6 +887,17 @@ body {
 
   #menu li:hover {
     border-bottom: 5px solid #D742D8;
+  }
+
+  h3 {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    position: relative;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 20px;
   }
 }
 @media (min-width: 1024px) {
@@ -701,6 +957,16 @@ body {
 
   #menu li:hover {
     border-bottom: 5px solid #D742D8;
+  }
+
+  h3 {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    position: relative;
+    text-transform: uppercase;
+    margin: 0;
   }
 }
 

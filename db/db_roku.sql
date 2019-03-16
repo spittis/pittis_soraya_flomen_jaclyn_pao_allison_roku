@@ -3,12 +3,18 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 15, 2019 at 06:43 PM
+-- Generation Time: Mar 15, 2019 at 10:27 PM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `db_roku`
@@ -27,24 +33,25 @@ CREATE TABLE `tbl_audio` (
   `audio_artist` varchar(50) NOT NULL,
   `audio_released` year(4) NOT NULL,
   `audio_runtime` varchar(10) NOT NULL,
-  `audio_song` varchar(20) NOT NULL
+  `audio_song` varchar(20) NOT NULL,
+  `audio_rating` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_audio`
 --
 
-INSERT INTO `tbl_audio` (`audio_id`, `audio_cover`, `audio_title`, `audio_artist`, `audio_released`, `audio_runtime`, `audio_song`) VALUES
-(1, 'dontbecruel.jpg', 'Don\'t Be Cruel', 'Elvis Presley', 1956, '3:09', 'DontBeCruel.mp3'),
-(2, 'shout.jpg', 'Shout', 'The Isley Brothers', 1959, '4:18', 'Shout.mp3'),
-(3, 'HouseRisingSun.jpg', 'The House of the Rising Sun', 'The Animals', 1964, '4:31', 'HouseRisingSun.mp3'),
-(4, 'trueloveways.jpg', 'True Love Ways', 'Buddy Holly', 1958, '3:08', 'TrueLoveWays.mp3'),
-(5, 'Satisfaction.jpg', 'Satisfaction', 'The Rolling Stones', 1965, '3:54', 'Satisfaction.mp3'),
-(6, 'StayinAlive.jpg', 'Stayin\' Alive', 'Bee Gees', 1977, '4:02', 'StayinAlive.mp3'),
-(7, 'LetItBe.jpg', 'Let It Be', 'The Beatles', 1970, '3:54', 'LetItBe.mp3'),
-(8, 'BillieJean.jpg', 'Billie Jean', 'Michael Jackson', 1982, '4:53', 'BillieJean.mp3'),
-(9, 'DontStopBelievin.jpg', 'Don\'t Stop Believin\'', 'Journey', 1981, '4:10', 'DontStopBelievin.mp3'),
-(10, 'wannabe.jpg', 'Wannabe', 'Spice Girls', 1996, '2:56', 'Wannabe.mp3');
+INSERT INTO `tbl_audio` (`audio_id`, `audio_cover`, `audio_title`, `audio_artist`, `audio_released`, `audio_runtime`, `audio_song`, `audio_rating`) VALUES
+(1, 'dontbecruel.jpg', 'Don\'t Be Cruel', 'Elvis Presley', 1956, '3:09', 'DontBeCruel.mp3', 'child'),
+(2, 'shout.jpg', 'Shout', 'The Isley Brothers', 1959, '4:18', 'Shout.mp3', 'child'),
+(3, 'HouseRisingSun.jpg', 'The House of the Rising Sun', 'The Animals', 1964, '4:31', 'HouseRisingSun.mp3', 'child'),
+(4, 'trueloveways.jpg', 'True Love Ways', 'Buddy Holly', 1958, '3:08', 'TrueLoveWays.mp3', 'child'),
+(5, 'Satisfaction.jpg', 'Satisfaction', 'The Rolling Stones', 1965, '3:54', 'Satisfaction.mp3', 'child'),
+(6, 'StayinAlive.jpg', 'Stayin\' Alive', 'Bee Gees', 1977, '4:02', 'StayinAlive.mp3', 'child'),
+(7, 'LetItBe.jpg', 'Let It Be', 'The Beatles', 1970, '3:54', 'LetItBe.mp3', 'child'),
+(8, 'BillieJean.jpg', 'Billie Jean', 'Michael Jackson', 1982, '4:53', 'BillieJean.mp3', ''),
+(9, 'DontStopBelievin.jpg', 'Don\'t Stop Believin\'', 'Journey', 1981, '4:10', 'DontStopBelievin.mp3', 'child'),
+(10, 'wannabe.jpg', 'Wannabe', 'Spice Girls', 1996, '2:56', 'Wannabe.mp3', 'adult');
 
 -- --------------------------------------------------------
 
@@ -118,16 +125,16 @@ CREATE TABLE `tbl_movies` (
 --
 
 INSERT INTO `tbl_movies` (`movie_id`, `movie_cover`, `movie_title`, `movie_director`, `movie_year`, `movie_runtime`, `movie_trailer`, `movie_rating`) VALUES
-(1, 'RearWindow.jpg', 'Rear Window', 'Alfred Hitchcock', 1954, '112', 'RearWindow.mp4', 'PG'),
-(2, 'SinginintheRain.jpg', 'Singin\' In The Rain', 'Gene Kelly & Stanley Donen', 1952, '103', 'SinginintheRain.mp4', 'G'),
-(3, 'BonnieClyde.jpg', 'Bonnie and Clyde', 'Arthur Penn', 1967, '111', 'BonnieAndClyde.mp4', 'R'),
-(4, 'SoundofMusic.jpg', 'The Sound of Music', 'Robert Wise', 1965, '172', 'TheSoundofMusic.mp4', 'G'),
-(5, 'jaws.jpeg', 'Jaws', 'Steven Spielberg', 1975, '124', 'Jaws.mp4', 'PG'),
-(6, 'Carrie.jpg', 'Carrie', 'Brian De Palma', 1976, '98', 'Carrie.mp4', 'R'),
-(7, 'BacktotheFuture.jpg', 'Back to the Future', 'Robert Zemeckis', 1985, '116', 'BackToTheFuture.mp4', 'PG'),
-(8, 'The_Breakfast_Club.jpg', 'The Breakfast Club', 'John Hughes', 1985, '97', 'TheBreakfastClub.mp4', 'R'),
-(9, 'pulpfiction.jpg', 'Pulp Fiction', 'Quentin Tarantino', 1994, '154', 'PulpFiction.mp4', 'R'),
-(10, 'Titanic.jpeg', 'Titanic', 'James Cameron', 1997, '194', 'Titanic.mp4', 'PG-13');
+(1, 'RearWindow.jpg', 'Rear Window', 'Alfred Hitchcock', 1954, '112', 'RearWindow.mp4', 'child'),
+(2, 'SinginintheRain.jpg', 'Singin\' In The Rain', 'Gene Kelly & Stanley Donen', 1952, '103', 'SinginintheRain.mp4', 'child'),
+(3, 'BonnieClyde.jpg', 'Bonnie and Clyde', 'Arthur Penn', 1967, '111', 'BonnieAndClyde.mp4', 'adult'),
+(4, 'SoundofMusic.jpg', 'The Sound of Music', 'Robert Wise', 1965, '172', 'TheSoundofMusic.mp4', 'child'),
+(5, 'jaws.jpeg', 'Jaws', 'Steven Spielberg', 1975, '124', 'Jaws.mp4', 'child'),
+(6, 'Carrie.jpg', 'Carrie', 'Brian De Palma', 1976, '98', 'Carrie.mp4', 'adult'),
+(7, 'BacktotheFuture.jpg', 'Back to the Future', 'Robert Zemeckis', 1985, '116', 'BackToTheFuture.mp4', 'child'),
+(8, 'The_Breakfast_Club.jpg', 'The Breakfast Club', 'John Hughes', 1985, '97', 'TheBreakfastClub.mp4', 'adult'),
+(9, 'pulpfiction.jpg', 'Pulp Fiction', 'Quentin Tarantino', 1994, '154', 'PulpFiction.mp4', 'adult'),
+(10, 'Titanic.jpeg', 'Titanic', 'James Cameron', 1997, '194', 'Titanic.mp4', 'adult');
 
 -- --------------------------------------------------------
 
@@ -328,4 +335,12 @@ ALTER TABLE `tbl_tv_era`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
+<<<<<<< HEAD
   MODIFY `user_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+=======
+  MODIFY `user_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+>>>>>>> 3119ec975452900c7f822f3710fe81d03a0d775e

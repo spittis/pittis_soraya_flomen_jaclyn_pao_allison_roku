@@ -8,48 +8,81 @@ export default {
 
     template: `
     <div class="container">
-    <!-- render this if we're viewing television or film -->
-        <div class="row" v-if="activeMediaType == 'video' && retrievedMedia.length > 0">
-            <div class="col-12 order-2 order-md-1 col-md-3 media-container">
-                <h4 class="media-title">{{currentMediaDetails.movie_title}}</h4>
-                <p class="media-details" v-html="currentMediaDetails.movie_director"></p>
-                <span class="media-time">{{currentMediaDetails.movie_runtime}} minutes</span>
-                <span class="media-year">Released {{currentMediaDetails.movie_year}}</span>
-            </div>
 
-            <div class="col-12 order-1 order-md-2 col-md-9 media-container">
-                <video autoplay controls muted :src="'video/' + currentMediaDetails.movie_trailer" class="fs-video"></video>
+<!-- MOVIES -->
+
+<div v-if="!isHiddenmov"> 
+    <div class="portfolioModalmovie">
+        <span v-on:click="isHiddenmov = true" class="closemovie">CLOSE</span>
+        <section :class="{ 'show-movie' : showDetails }">
+
+            <!-- render this if we're viewing television or film -->
+            <div class="row" v-if="activeMediaType == 'video' && retrievedMedia.length > 0">
+                <div class="col-12 order-2 order-md-1 col-md-3 media-container">
+                    <h4 class="media-title">{{currentMediaDetails.movie_title}}</h4>
+                    <p class="media-details" v-html="currentMediaDetails.movie_director"></p>
+                    <span class="media-time">{{currentMediaDetails.movie_runtime}} minutes</span>
+                    <span class="media-year">Released {{currentMediaDetails.movie_year}}</span>
+                </div>
+    
+                <div class="col-12 order-1 order-md-2 col-md-9 media-container">
+                    <video autoplay controls :src="'video/' + currentMediaDetails.movie_trailer" class="fs-video"></video>
+                </div>
             </div>
-        </div>
+        </section>
+    </div>
+</div>
+
+
+<!-- TELEVISION -->
+
+<div v-if="!isHiddentv"> 
+    <div class="portfolioModaltv">
+        <span v-on:click="isHiddentv = true" class="closetv">CLOSE</span>
+        <section :class="{ 'show-movie' : showDetails }">
 
         <!-- render this if we're viewing television -->
         <div class="row" v-if="activeMediaType == 'television' && retrievedMedia.length > 0">
-            <div class="col-12 order-2 order-md-1 col-md-3 media-container">
-                <h4 class="media-title">{{currentMediaDetails.tv_title}}</h4>
-                <p>Seasons Available:</p><p class="media-details" v-html="currentMediaDetails.tv_season"></p>
-                <span class="media-time">Runtime: {{currentMediaDetails.tv_runtime}} minutes</span>
-                <span class="media-year">Released: {{currentMediaDetails.tv_released}}</span>
+        <div class="col-12 order-2 order-md-1 col-md-3 media-container">
+            <h4 class="media-title">{{currentMediaDetails.tv_title}}</h4>
+            <p>Seasons Available:</p><p class="media-details" v-html="currentMediaDetails.tv_season"></p>
+            <span class="media-time">Runtime: {{currentMediaDetails.tv_runtime}} minutes</span>
+            <span class="media-year">Released: {{currentMediaDetails.tv_released}}</span>
+    </div>
+
+                <div class="col-12 order-1 order-md-2 col-md-9 media-container">
+                    <video autoplay controls :src="'video/' + currentMediaDetails.tv_trailer" class="fs-video"></video>
+                </div>
             </div>
-
-            <div class="col-12 order-1 order-md-2 col-md-9 media-container">
-                <video autoplay controls muted :src="'video/' + currentMediaDetails.tv_trailer" class="fs-video"></video>
-            </div>
-        </div>
+        </section>
+    </div>
+</div>
 
 
+<!-- AUDIO -->
+
+<div v-if="!isHiddenaud"> 
+    <div class="portfolioModalaud">
+        <span v-on:click="isHiddenaud = true" class="closeaud">CLOSE</span>
+        <section :class="{ 'show-movie' : showDetails }">
+
+        <!-- render this if we're viewing audio -->
         <div class="row" v-if="activeMediaType == 'audio' && retrievedMedia.length > 0">
-            <div class="col-12 order-2 order-md-1 col-md-6 media-container">
-                <h4 class="media-title">{{currentMediaDetails.audio_title}}</h4>
-                <h5>{{currentMediaDetails.audio_artist}}</h5>
-                <p class="media-details" v-html="currentMediaDetails.audio_runtime"></p>
-                <span class="media-year">Released: {{currentMediaDetails.audio_released}}</span>              
-            </div>
+        <div class="col-12 order-2 order-md-1 col-md-6 media-container">
+        <h4 class="media-title">{{currentMediaDetails.audio_title}}</h4>
+        <h5>{{currentMediaDetails.audio_artist}}</h5>
+        <p class="media-details" v-html="currentMediaDetails.audio_runtime"></p>
+        <span class="media-year">Released: {{currentMediaDetails.audio_released}}</span>  
+    </div>
 
-            <div class="col-12 order-1 order-md-2 col-md-6 audio-wrapper">
-                <audio autoplay controls :src="'audio/' + currentMediaDetails.audio_song"/>
-                <img :src="'images/' + currentMediaDetails.audio_cover" alt="album art" class="img-fluid"/>
+    <div class="col-12 order-1 order-md-2 col-md-6 audio-wrapper">
+        <audio autoplay controls :src="'audio/' + currentMediaDetails.audio_song"/>
+    </div>
             </div>
-        </div>
+        </section>
+    </div>
+</div>
+
 
         <div class="row"> <!-- 2-up for nav and media info -->
             <nav class="col-12 col-sm-3 side-nav">
@@ -131,18 +164,24 @@ export default {
                         </li>
                 </ul>
 
-                <div class="thumb-wrapper clearfix">
-                    <img v-if="activeMediaType == 'video'" v-for="media in retrievedMedia" :src="'images/' + media.movie_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb video-thumb">
-                    <img v-if="activeMediaType == 'audio'" v-for="media in retrievedMedia" :src="'images/' + media.audio_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb audio-thumb">
-                    <img v-if="activeMediaType == 'television'" v-for="media in retrievedMedia" :src="'images/' + media.tv_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb television-thumb">
+                <div class="thumb-wrapper clearfix" >
+                    <img v-on:click="isHiddenmov = !isHiddenmov" v-if="activeMediaType == 'video'" v-for="media in retrievedMedia" :src="'images/' + media.movie_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb video-thumb">
+                    <img v-on:click="isHiddenaud = !isHiddenaud" v-if="activeMediaType == 'audio'" v-for="media in retrievedMedia" :src="'images/' + media.audio_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb audio-thumb">
+                    <img v-on:click="isHiddentv = !isHiddentv" v-if="activeMediaType == 'television'" v-for="media in retrievedMedia" :src="'images/' + media.tv_cover" alt="media thumb" @click="switchActiveMedia(media)" class="img-thumbnail rounded float-left media-thumb television-thumb">
                 </div>
             </div>       
         </div> <!-- end 2-up for media info -->
     </div>
     `,
 
+
+
     data() {
         return {
+
+            isHiddenmov: true,
+            isHiddentv: true,
+            isHiddenaud: true,
             // set the default to video -> will get a random video via query on create
             activeMediaType: "video",
 

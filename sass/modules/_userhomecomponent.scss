@@ -1,10 +1,6 @@
-
-
-// TREVORS STUFF IS BELOW
-
 .fs-video { width: 100% }
 
-.media-container { background: darken($dark-bg, 15%)}
+.media-container { background: darken(#0a3535, 15%)}
 .media-container:first-of-type { padding-bottom: 1em; }
 .media-container:last-of-type { padding-left: 0; padding-right: 0; }
 
@@ -20,14 +16,16 @@
 .media-year, .media-time { font-size: 1em; }
 .media-year { display: block; float: right; }
 
-.side-nav { background: darken($dark-bg, 9%) }
+.side-nav { 
+    background: darken(#0a3535, 9%) 
+}
 
-// left hand pad list -> audio, film television
+
 .media-type { 
     list-style-type: none;
     margin-bottom: 0;
     
-    li { 
+li { 
         padding: 1rem;
         cursor: pointer;
         display: inline-block;
@@ -40,14 +38,16 @@
         }
     }
 
-    li:hover span:first-of-type { color: $roku-purple }
+    li:hover span:first-of-type { 
+        color: $pink;
+    }
 }
 
 // genre filter links
 
 .media-genres {
     list-style-type: none;
-    background: darken($dark-bg, 10%);
+    background: darken(rgba(41, 41, 41, 0.5), 10%);
     margin: 0;
     padding: 1em 1em 1em 1.5em;
 
@@ -60,7 +60,10 @@
             text-decoration: none;
         }
         
-        a:hover { color: $roku-purple; }
+        a:hover { 
+            //color: $pink;
+            border-bottom: 5px solid $pink;
+        }
     }
 
     li::after {
@@ -90,9 +93,9 @@
 .audio-thumb { height: 150px; }
 
 .audio-wrapper {
-    background: $dark-bg;
+    background: white;
 
-    img { max-width: 85%; display: block; margin: 0 auto; padding: 4% }
+    img { max-width: 85%; display: inline; margin: 0 auto; padding: 4% }
 
 }
 
@@ -104,14 +107,3 @@ audio {
     opacity: 0.8;
 }
 
-
-
-
-
-
-
-
-
-
-
-// OUR STUFF IS BELOW THIS LINE
