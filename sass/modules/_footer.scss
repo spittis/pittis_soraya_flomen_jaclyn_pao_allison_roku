@@ -1,36 +1,111 @@
 
+/* MODAL */
 
-// THIS IS TREVORS STUFF
+  
+//   MOVIE MODAL
 
-// footer {
-//     position: absolute;
-//     bottom: 0;
-//     width: 100%;
-//     height: 100px;
-//     // line-height: 60px;
-//     background-color: $dark-bg;
+  .closemovie {
+    position: absolute;
+    text-decoration: underline;
+    top: 30px;
+    right: 50px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  
+  .closemovie:hover
+  {
+    color: #efefef;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
-//     p { 
-//         display: inline-block;
-//         padding-left: 1em;
-//         @include vertical-align();
-//     }
+  .portfolioModalmovie
+  {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    padding-top: 105px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    background-color: black;
+    background-color: rgba(0,0,0,0.9);
+  }
+ 
+  //   tv MODAL
 
-// 	ul { 
-//         list-style-type: none;
-//         @include vertical-align();
-//         margin-bottom: 0;
-//         max-width: 95px;
+  .closetv {
+    position: absolute;
+    text-decoration: underline;
+    top: 30px;
+    right: 50px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  
+  .closetv:hover
+  {
+    color: #efefef;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
-// 		li {
-// 			font-size: 2.5em;
-// 			display: inline-block;
-// 			margin-right: 0.4em;
-// 			color: rgba(255, 255, 255, 0.3);
-// 		}
-// 	}
-// }
+  .portfolioModaltv
+  {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    padding-top: 105px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    background-color: black;
+    background-color: rgba(0,0,0,0.9);
+  }
+  
+  //   aud MODAL
 
+  .closeaud {
+    position: absolute;
+    text-decoration: underline;
+    top: 30px;
+    right: 50px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  
+  .closeaud:hover
+  {
+    color: #efefef;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .portfolioModalaud
+  {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    padding-top: 105px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    background-color: black;
+    background-color: rgba(0,0,0,0.9);
+  }
 
 
 

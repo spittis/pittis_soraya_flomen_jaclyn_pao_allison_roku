@@ -72,6 +72,7 @@ export default {
                     } else {
                         this.$emit("authenticated", true, data[0]);
                         this.$router.replace({ name: "users" });
+                        this.$emit("administator", true, data[0]);
                     }
                 })
              .catch(function(error) { 

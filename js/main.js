@@ -1,4 +1,3 @@
-
 import UsersComponent from './components/UsersComponent.js';
 import LoginComponent from './components/LoginComponent.js';
 import AdminComponent from './components/AdminComponent.js';
@@ -44,6 +43,7 @@ const vm = new Vue({
     if (localStorage.getItem("cachedUser")) {
       let user = JSON.parse(localStorage.getItem("cachedUser"));
       this.authenticated = true;
+      // this.administrator = true;
       // params not setting properly, so this route needs to be debugged a bit...
       this.$router.push({ name: "home", params: { currentuser: user }});
     } else {
@@ -51,9 +51,12 @@ const vm = new Vue({
     }    
   },
 
+ 
+
   methods: {
-    setAuthenticated(status, data) {
+    setAuthenticated(status, data) { 
       this.authenticated = status;
+      // this.administrator = status;
       this.user = data;
     },
 
@@ -61,6 +64,12 @@ const vm = new Vue({
       // set the error message string and show the toast notification
       this.toastmessage = errorMsg;
       $('.toast').toast('show');
+    },
+
+    administrator(){
+      if (['user_access'] === "1") {
+        this.administrator = true;
+      }
     },
 
     logout() {
@@ -71,8 +80,7 @@ const vm = new Vue({
       // push user back to login page
       this.$router.push({ path: "/login" });
       this.authenticated = false;
-      
-      
+      this.administrator = false; // administrator and authenticated content will be hidden
     }
   },
 
