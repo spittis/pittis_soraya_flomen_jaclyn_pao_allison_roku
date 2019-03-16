@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 15, 2019 at 06:43 PM
+-- Generation Time: Mar 16, 2019 at 02:28 AM
 -- Server version: 5.7.23
--- PHP Version: 7.2.8
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -179,16 +179,16 @@ CREATE TABLE `tbl_tv` (
 --
 
 INSERT INTO `tbl_tv` (`tv_id`, `tv_cover`, `tv_title`, `tv_season`, `tv_released`, `tv_runtime`, `tv_rating`, `tv_trailer`) VALUES
-(1, 'gameofthrones.jpg', 'Game of Thrones', '1-7', '2011-04-17', '60', 'TV-MA', ''),
-(2, 'greys.jpg', 'Grey\'s Anatomy', '1', '2005-03-27', '40', 'TV-14', ''),
-(3, 'bigbang.jpg', 'The Big Bang Theory', '1-11', '2006-05-01', '22', 'TV-14', ''),
-(4, 'strangerthings.jpg', 'Stranger Things', '1-2', '2016-07-15', '51', 'TV-14', ''),
-(5, 'modernfamily.jpg', 'Modern Family', '1-10', '2009-09-22', '22', 'TV-PG', ''),
-(6, 'theoffice.jpg', 'The Office', '1-9', '2005-03-24', '22', 'TV-PG', ''),
-(7, 'friends.jpg', 'Friends', '1-10', '1994-09-22', '22', 'TV-14', ''),
-(8, 'spongebob.jpg', 'Spongebob Squarepants', '1-12', '1999-04-30', '23', 'TV-Y', ''),
-(9, 'hannahmontana.jpg', 'Hannah Montana', '1-4', '2006-03-24', '23', 'TV-G', ''),
-(10, 'recess.jpg', 'Disney\'s Recess', '1-6', '1997-08-31', '23', 'TV-Y', '');
+(11, 'ILoveLucy.jpg', 'I Love Lucy ', '6', '1951-10-15', '30', 'G', 'ILoveLucy.mp4'),
+(12, 'GilligansIsland.jpg', 'Gilligan\'s Island', '3', '1967-04-17', '30', 'PG', 'GilligansIsland.mp4'),
+(13, 'TheBradyBunch.jpg', 'The Brady Bunch', '5', '1974-03-08', '30', 'G', 'TheBradyBunch.mp4'),
+(14, 'HappyDays.jpg', 'Happy Days', '11', '1984-09-24', '30', 'PG', 'HappyDays.mp4'),
+(15, 'Cheers.jpg', 'Cheers', '11', '1982-09-30', '30', 'PG', 'Cheers.mp4'),
+(16, 'MiamiVice.jpg', 'Miami Vice', '5', '1990-01-25', '60', 'PG', 'MiamiVice.mp4'),
+(17, 'GoldenGirls.jpeg', 'The Golden Girls', '7', '1985-09-14', '30', 'PG', 'TheGoldenGirls.mp4'),
+(18, 'FreshPrince.jpeg', 'The Fresh Prince of Bel-Air', '6', '1990-09-10', '30', 'PG-14', 'FreshPrince.mp4'),
+(19, 'FullHouse.jpg', 'Full House', '8', '1987-09-22', '30', 'G', 'FullHouse.mp4'),
+(20, 'Friends.jpg', 'Friends', '10', '1994-09-22', '30', 'PG', 'Friends.mp4');
 
 -- --------------------------------------------------------
 
@@ -316,7 +316,7 @@ ALTER TABLE `tbl_movies_era`
 -- AUTO_INCREMENT for table `tbl_tv`
 --
 ALTER TABLE `tbl_tv`
-  MODIFY `tv_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `tv_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tbl_tv_era`
